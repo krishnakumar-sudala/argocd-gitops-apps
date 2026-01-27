@@ -18,3 +18,13 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
+  ignoreDifferences:
+    - group: argoproj.io
+      kind: Application
+      jsonPointers:
+        - /status
+        - /operationState
+        - /metadata/annotations
+        - /metadata/finalizers
+        - /metadata/managedFields
