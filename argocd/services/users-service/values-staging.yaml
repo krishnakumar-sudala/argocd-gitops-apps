@@ -1,0 +1,32 @@
+image:
+  repository: ghcr.io/krishnakumar-sudala/users-service
+  tag: "staging"
+
+replicaCount: 2
+
+env:
+  NODE_ENV: "staging"
+  APP_VERSION: "staging"
+  PORT: "3000"
+  JWT_SECRET: "staging-secret-key"
+  POSTGRES_HOST: "users-postgres-staging"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: "usersdb_staging"
+  POSTGRES_USER: "users_staging"
+  POSTGRES_PASSWORD: "stagingpassword"
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 300m
+    memory: 512Mi
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: true
+  host: "users-service-staging.apps-crc.testing"

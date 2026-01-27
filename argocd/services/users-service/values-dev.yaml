@@ -1,0 +1,32 @@
+image:
+  repository: ghcr.io/krishnakumar-sudala/users-service
+  tag: "latest"
+
+replicaCount: 1
+
+env:
+  NODE_ENV: "development"
+  APP_VERSION: "dev"
+  PORT: "3000"
+  JWT_SECRET: "dev-secret-key"
+  POSTGRES_HOST: "users-postgres-dev"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: "usersdb_dev"
+  POSTGRES_USER: "users_dev"
+  POSTGRES_PASSWORD: "devpassword"
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 128Mi
+  limits:
+    cpu: 150m
+    memory: 256Mi
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: true
+  host: "users-service-dev.apps-crc.testing"

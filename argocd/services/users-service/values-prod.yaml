@@ -1,0 +1,32 @@
+image:
+  repository: ghcr.io/krishnakumar-sudala/users-service
+  tag: "prod"
+
+replicaCount: 3
+
+env:
+  NODE_ENV: "production"
+  APP_VERSION: "prod"
+  PORT: "3000"
+  JWT_SECRET: "prod-secret-key"
+  POSTGRES_HOST: "users-postgres-prod"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: "usersdb_prod"
+  POSTGRES_USER: "users_prod"
+  POSTGRES_PASSWORD: "prodpassword"
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 1Gi
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: true
+  host: "users-service-prod.apps-crc.testing"
