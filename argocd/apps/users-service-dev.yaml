@@ -11,7 +11,7 @@ spec:
     path: helm/users-service
     helm:
       valuesFiles:
-        - values-dev.yaml
+        - argocd/services/users-service/values-dev.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: users-service-dev
