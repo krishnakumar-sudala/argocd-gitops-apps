@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: helm/users-service
     helm:
-      valuesFiles:
+      valueFiles:
         - argocd/services/users-service/values-staging.yaml
   destination:
     server: https://kubernetes.default.svc
