@@ -2,6 +2,9 @@ image:
   repository: ghcr.io/krishnakumar-sudala/users-service
   tag: "1769777482"
 
+route:
+  host: users-service-dev.apps-crc.testing
+
 replicaCount: 1
 
 env:
