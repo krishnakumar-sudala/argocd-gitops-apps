@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/krishnakumar-sudala/argocd-gitops-apps.git
+    repoURL: https://github.com/krishnakumar-sudala/db-platform-liquibase.git
     targetRevision: main
     path: apps/liquibase-users/dev
 
