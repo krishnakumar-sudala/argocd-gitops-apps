@@ -10,8 +10,9 @@ spec:
     repoURL: https://github.com/krishnakumar-sudala/db-platform-liquibase.git
     targetRevision: main
     path: helm/liquibase-users
-  valuesFiles:
-  - values-dev.yaml
+    helm:
+      valueFiles:
+        - values-dev.yaml
 
   destination:
     server: https://kubernetes.default.svc
