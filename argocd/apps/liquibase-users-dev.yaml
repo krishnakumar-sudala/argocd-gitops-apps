@@ -23,4 +23,8 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
+<<<<<<< HEAD
       - CreateNamespace=true
+=======
+      - CreateNamespace=true
+>>>>>>> e542f67bf398776150ff3b8bae342debfd835c54
